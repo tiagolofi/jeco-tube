@@ -50,13 +50,19 @@ with col1:
 			unsafe_allow_html = True
 		)
 
-	if st.button('Donwload'):
+	s1, s2 = st.columns(2)
+
+	with s1:
 
 		name, data = download_va('video')
 
 		baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
+
+	if s2:
+
+		name2, data2 = download_va('audio')
 		
-		# baixar_musica = st.download_button('Baixar Áudio', data = )
+		baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
 		
 with col2:
 	
