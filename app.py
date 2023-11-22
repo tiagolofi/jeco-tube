@@ -66,7 +66,7 @@ with col1:
 
 		down_but_a = st.button('Download Áudio')
 
-		if dow_but_a:
+		if down_but_a:
 
 			name2, data2 = download_va('audio')
 
