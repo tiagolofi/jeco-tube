@@ -5,7 +5,7 @@ import yt
 st.set_page_config(
 	page_title = 'JecoTube - o seu YouTube sem anúncios',
 	layout = 'wide',
-	page_icon = 'https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/youtube-512.png',
+	page_icon = 'https://rotony.com.br/wp-content/uploads/2021/09/free-youtube-logo-icon-2431-thumb.png',
 	initial_sidebar_state = 'collapsed' 
 )
 
