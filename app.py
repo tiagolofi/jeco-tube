@@ -54,15 +54,23 @@ with col1:
 
 	with s1:
 
-		name, data = download_va('video')
+		down_but_v = st.button('Download Vídeo')
 
-		baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
+		if down_but_v:
+
+			name, data = download_va('video')
+
+			baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
 
 	with s2:
 
-		name2, data2 = download_va('audio')
-		
-		baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
+		down_but_a = st.button('Download Áudio')
+
+		if dow_but_a:
+
+			name2, data2 = download_va('audio')
+
+			baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
 		
 with col2:
 	
