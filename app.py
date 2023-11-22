@@ -39,7 +39,7 @@ with col1:
 
 	st.subheader('Acesso com Link')
 
-	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=Qy0KqEs2TwY&ab_channel=HermeseRenatoOficial')
+	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=oCt_LiCPJfQ&ab_channel=McSuave')
 
 	with st.expander('Mostrar/Ocultar Vídeo'):
 
@@ -58,7 +58,7 @@ with col1:
 
 		baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
 
-	if s2:
+	with s2:
 
 		name2, data2 = download_va('audio')
 		
