@@ -28,11 +28,9 @@ with col1:
 			),
 			unsafe_allow_html = True
 		)
-		
-	down_ = YouTube(url = link)
 
-	baixar_video = st.download_button('Baixar Vídeo', data = down_.streams.filter(only_video = True).filter(file_extension='mp4').order_by('resolution').last().download())
-	baixar_musica = st.download_button('Baixar Áudio', data = down_.streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last().download())
+	baixar_video = st.download_button('Baixar Vídeo', data = YouTube(url = link).streams.filter(only_video = True).filter(file_extension='mp4').order_by('resolution').last().download())
+	baixar_musica = st.download_button('Baixar Áudio', data = YouTube(url = link).streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last().download())
 		
 with col2:
 	
