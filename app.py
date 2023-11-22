@@ -21,7 +21,7 @@ with col1:
 
     link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=khplMpm4ctc&ab_channel=Ado')
 
-    with st.expander('Mostrar/Ocultar Vìdeo'):
+    with st.expander('Mostrar/Ocultar Vídeo'):
 
         st.markdown(
             yt.embed_link(
@@ -61,27 +61,29 @@ c1, c2, c3, c4, c5 = st.columns(5)
 
 WIDTH = 200
 
-with c1:
+st.expander('Mostrar/Ocultar Feed'):
 
-    for i in resultados[0:lines]:
-        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-
-with c2:
-
-    for i in resultados[lines + 1:lines * 2]:
-        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-
-with c3:
-
-    for i in resultados[(lines * 2) + 1:lines * 3]:
-        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-
-with c4:
-
-    for i in resultados[(lines * 3) + 1:lines * 4]:
-        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-
-with c5:
-
-    for i in resultados[(lines * 4) + 1:len(resultados)]:
-        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
+	with c1:
+	
+	    for i in resultados[0:lines]:
+	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+	
+	with c2:
+	
+	    for i in resultados[lines + 1:lines * 2]:
+	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+	
+	with c3:
+	
+	    for i in resultados[(lines * 2) + 1:lines * 3]:
+	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+	
+	with c4:
+	
+	    for i in resultados[(lines * 3) + 1:lines * 4]:
+	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+	
+	with c5:
+	
+	    for i in resultados[(lines * 4) + 1:len(resultados)]:
+	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
