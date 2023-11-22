@@ -54,7 +54,7 @@ with col1:
 
 	with s1:
 
-		down_but_v = st.button('Download Vídeo')
+		down_but_v = st.button('Preparar Download Vídeo')
 
 		if down_but_v:
 
@@ -64,7 +64,7 @@ with col1:
 
 	with s2:
 
-		down_but_a = st.button('Download Áudio')
+		down_but_a = st.button('Preparar Download Áudio')
 
 		if down_but_a:
 
