@@ -15,7 +15,7 @@ def embed_link(hash_video: str) -> str:
     return f'''
     <iframe
         width="100%" height="400" src="https://www.youtube-nocookie.com/embed/{hash_video}"
-		frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> 
+	frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> 
     ></iframe>
     '''
 
