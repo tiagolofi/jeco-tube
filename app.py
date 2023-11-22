@@ -1,6 +1,7 @@
 
 import streamlit as st
 from pytube import YouTube
+from io import BytesIO
 import yt
 
 st.set_page_config(
@@ -29,8 +30,8 @@ with col1:
 			unsafe_allow_html = True
 		)
 
-	baixar_video = st.download_button('Baixar Vídeo', data = YouTube(url = link).streams.filter(only_video = True).filter(file_extension='mp4').order_by('resolution').last().stream_to_buffer())
-	baixar_musica = st.download_button('Baixar Áudio', data = YouTube(url = link).streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last().stream_to_buffer())
+	baixar_video = st.download_button('Baixar Vídeo', data = YouTube(url = link).streams.filter(only_video = True).filter(file_extension='mp4').order_by('resolution').last().stream_to_buffer(BytesIO()))
+	baixar_musica = st.download_button('Baixar Áudio', data = YouTube(url = link).streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last().stream_to_buffer(BytesIO()))
 		
 with col2:
 	
