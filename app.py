@@ -61,7 +61,7 @@ c1, c2, c3, c4, c5 = st.columns(5)
 
 WIDTH = 200
 
-st.expander('Mostrar/Ocultar Feed'):
+with st.expander('Mostrar/Ocultar Feed'):
 
 	with c1:
 	
