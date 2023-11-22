@@ -16,18 +16,18 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
 
-    st.subheader('Acesso com Link')
+	st.subheader('Acesso com Link')
 
-    link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=Qy0KqEs2TwY&ab_channel=HermeseRenatoOficial')
+	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=Qy0KqEs2TwY&ab_channel=HermeseRenatoOficial')
 
-    with st.expander('Mostrar/Ocultar Vídeo'):
+	with st.expander('Mostrar/Ocultar Vídeo'):
 
-        st.markdown(
-            yt.embed_link(
-                hash_video = yt.get_hash_video(link)
-            ),
-            unsafe_allow_html = True
-        )
+		st.markdown(
+			yt.embed_link(
+				hash_video = yt.get_hash_video(link)
+			),
+			unsafe_allow_html = True
+		)
 		
 	baixar_video = st.button('Baixar Vídeo')
 	baixar_musica = st.button('Baixar Áudio')
@@ -45,19 +45,19 @@ with col1:
 		down_.streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last().download()
 
 with col2:
-    
-    st.subheader('Acesso com Hash')
+	
+	st.subheader('Acesso com Hash')
 
-    hash_ = st.text_input('Hash do Vídeo:')
+	hash_ = st.text_input('Hash do Vídeo:')
 
-    with st.expander('Mostrar/Ocultar Vìdeo '):
+	with st.expander('Mostrar/Ocultar Vìdeo '):
 
-        st.markdown(
-            yt.embed_link(
-                hash_video = hash_
-            ),
-            unsafe_allow_html = True
-        )
+		st.markdown(
+			yt.embed_link(
+				hash_video = hash_
+			),
+			unsafe_allow_html = True
+		)
 
 with col3:
 
@@ -72,7 +72,7 @@ with col3:
 			<iframe 
 		 		width="100%" height="300" src="{link_playlist}" 
 		   		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-		     		gyroscope; picture-in-picture; web-share" allowfullscreen>
+			 		gyroscope; picture-in-picture; web-share" allowfullscreen>
 			</iframe>
 			''', unsafe_allow_html=True
 		)
@@ -83,7 +83,7 @@ termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mend
 botao = st.button('Pesquisar')
 
 if botao:
-    st.session_state['ultima_busca'] = termo
+	st.session_state['ultima_busca'] = termo
 
 if 'ultima_busca' in st.session_state.keys():
 
@@ -103,19 +103,19 @@ if 'ultima_busca' in st.session_state.keys():
 	with c2:
 		
 		for i in resultados[lines + 1:lines * 2]:
-		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 		
 	with c3:
 		
 		for i in resultados[(lines * 2) + 1:lines * 3]:
-		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 		
 	with c4:
 		
 		for i in resultados[(lines * 3) + 1:lines * 4]:
-		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 		
 	with c5:
 		
 		for i in resultados[(lines * 4) + 1:len(resultados)]:
-		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
+				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
