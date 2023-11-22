@@ -11,7 +11,7 @@ st.set_page_config(
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
 
@@ -42,6 +42,24 @@ with col2:
             ),
             unsafe_allow_html = True
         )
+
+with col3:
+
+	st.subheader('Playlist de Vídeo')
+
+	link_playlist = st.text_input('Source da Playlist', value = "https://www.youtube.com/embed/videoseries?si=3KfAA7PN_faEeDSj&amp;list=PLjEnoakd3pXUeW8FgKdq4RLT4RFLPVoMK")
+
+	with st.expander('Mostrar/Ocultar Playlist'):
+
+		st.markdown(
+			f'''
+			<iframe 
+		 		width="100%" height="300" src="{link_playlist}" 
+		   		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+		     	gyroscope; picture-in-picture; web-share" allowfullscreen>
+			</iframe>
+			''', unsafe_allow_html=True
+		)
 
 st.subheader('Pesquisa de Vídeo')
 
