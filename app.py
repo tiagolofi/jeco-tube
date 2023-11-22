@@ -19,7 +19,7 @@ def download_va(type_: str) -> tuple:
 
 	if type_ == 'video':
 
-		down_ = YouTube(url = link).streams.filter(only_video = True).filter(file_extension='mp4').order_by('resolution').last()
+		down_ = YouTube(url = link).streams.filter(adaptive = True).filter(file_extension='mp4').order_by('resolution').last()
 
 		down_.stream_to_buffer(buff)
 
