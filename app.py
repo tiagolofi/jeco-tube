@@ -23,7 +23,7 @@ def download_va(type_: str) -> tuple:
 
 		down_.stream_to_buffer(buff)
 
-		return down_.default_filename, buff.seek(0)
+		return down_.default_filename, buff.getvalue()
 
 	else:
 
@@ -31,7 +31,7 @@ def download_va(type_: str) -> tuple:
 
 		down_.stream_to_buffer(buff)
 
-		return down_.default_filename, buff.seek(0)
+		return down_.default_filename, buff.getvalue()
 
 col1, col2, col3 = st.columns(3)
 
