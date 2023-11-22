@@ -11,8 +11,6 @@ st.set_page_config(
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
-st.session_state['ultima_busca'] = "Notícias em Alta no Brasil"
-
 col1, col2 = st.columns(2)
 
 with col1:
@@ -47,7 +45,7 @@ with col2:
 
 st.subheader('Pesquisa de Vídeo')
 
-termo = st.text_input('Termo de Pesquisa:')
+termo = st.text_input('Termo de Pesquisa:', value = 'Notícias em Alta no Brasil')
 botao = st.button('Pesquisar')
 
 if botao:
@@ -61,27 +59,29 @@ c1, c2, c3, c4, c5 = st.columns(5)
 
 WIDTH = 200
 
-with c1:
-	
-	for i in resultados[0:lines]:
-		st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-	
-with c2:
-	
-	for i in resultados[lines + 1:lines * 2]:
-	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-	
-with c3:
-	
-	for i in resultados[(lines * 2) + 1:lines * 3]:
-	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-	
-with c4:
-	
-	for i in resultados[(lines * 3) + 1:lines * 4]:
-	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-	
-with c5:
-	
-	for i in resultados[(lines * 4) + 1:len(resultados)]:
-	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
+if st.session_state['ultima_busca'] != None:
+
+	with c1:
+		
+		for i in resultados[0:lines]:
+			st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+		
+	with c2:
+		
+		for i in resultados[lines + 1:lines * 2]:
+		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+		
+	with c3:
+		
+		for i in resultados[(lines * 2) + 1:lines * 3]:
+		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+		
+	with c4:
+		
+		for i in resultados[(lines * 3) + 1:lines * 4]:
+		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+		
+	with c5:
+		
+		for i in resultados[(lines * 4) + 1:len(resultados)]:
+		        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
