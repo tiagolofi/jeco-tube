@@ -63,7 +63,7 @@ with col3:
 
 st.subheader('Pesquisa de Vídeo')
 
-termo = st.text_input('Termo de Pesquisa:', value = 'Notícias em Alta no Brasil')
+termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mendes')
 botao = st.button('Pesquisar')
 
 if botao:
