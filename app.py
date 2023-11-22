@@ -1,5 +1,6 @@
 
 import streamlit as st
+from pytube import YouTube
 import yt
 
 st.set_page_config(
@@ -27,6 +28,21 @@ with col1:
             ),
             unsafe_allow_html = True
         )
+
+	baixar_video = st.button('Baixar Vídeo')
+	baixar_musica = st.button('Baixar Áudio')
+		
+	if baixar_video:
+			
+			down_ = YouTube(url = link)
+
+			yt.streams.filter(only_video = True).filter(file_extension='mp4').order_by('resolution').last().download()
+
+	if baixa_musica:
+			
+			down_ = YouTube(url = link)
+
+			yt.streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last().download()
 
 with col2:
     
