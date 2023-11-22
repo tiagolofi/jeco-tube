@@ -58,9 +58,15 @@ with col1:
 
 		if down_but_v:
 
-			name, data = download_va('video')
+			try:
 
-			baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
+				name, data = download_va('video')
+
+				baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
+
+			except:
+
+				st.info('Este vídeo não pode ser baixado!')
 
 	with s2:
 
@@ -68,9 +74,15 @@ with col1:
 
 		if down_but_a:
 
-			name2, data2 = download_va('audio')
+			try:
 
-			baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
+				name2, data2 = download_va('audio')
+
+				baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
+
+			except:
+
+				st.info('Este áudio não pode ser baixado!')
 		
 with col2:
 	
