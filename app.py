@@ -61,29 +61,27 @@ c1, c2, c3, c4, c5 = st.columns(5)
 
 WIDTH = 200
 
-with st.expander('Mostrar/Ocultar Feed'):
-
-	with c1:
+with c1:
 	
-	    for i in resultados[0:lines]:
+	for i in resultados[0:lines]:
+		st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+	
+with c2:
+	
+	for i in resultados[lines + 1:lines * 2]:
 	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 	
-	with c2:
+with c3:
 	
-	    for i in resultados[lines + 1:lines * 2]:
+	for i in resultados[(lines * 2) + 1:lines * 3]:
 	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 	
-	with c3:
+with c4:
 	
-	    for i in resultados[(lines * 2) + 1:lines * 3]:
+	for i in resultados[(lines * 3) + 1:lines * 4]:
 	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 	
-	with c4:
+with c5:
 	
-	    for i in resultados[(lines * 3) + 1:lines * 4]:
-	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-	
-	with c5:
-	
-	    for i in resultados[(lines * 4) + 1:len(resultados)]:
+	for i in resultados[(lines * 4) + 1:len(resultados)]:
 	        st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
