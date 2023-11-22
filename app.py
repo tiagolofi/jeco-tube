@@ -32,7 +32,7 @@ with col2:
     
     st.subheader('Acesso com Hash')
 
-    hash_ = st.text_input('Hash do Vídeo:')
+    hash_ = st.text_input('Hash do Vídeo:', value = st.session_state['video'])
 
     with st.expander('Mostrar/Ocultar Vìdeo '):
 
@@ -82,8 +82,12 @@ if 'ultima_busca' in st.session_state.keys():
 	with c1:
 		
 		for i in resultados[0:lines]:
-			st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-		
+			st.image(i['thumb'], caption = i['title'], width = WIDTH)
+			b1 = st.button(i['hash_video'])
+
+			if b1:
+				st.session_state['video'] = i['hash_video']
+	
 	with c2:
 		
 		for i in resultados[lines + 1:lines * 2]:
