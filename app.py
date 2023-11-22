@@ -51,7 +51,7 @@ botao = st.button('Pesquisar')
 if botao:
     st.session_state['ultima_busca'] = termo
 
-if st.session_state['ultima_busca'] != None:
+if 'ultima_busca' in st.session_state.keys():
 
 	resultados = yt.get_data_query(search_term = st.session_state['ultima_busca'])
 	
