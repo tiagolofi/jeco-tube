@@ -45,7 +45,7 @@ with col1:
 
 		st.markdown(
 			yt.embed_link(
-				hash_video = yt.get_hash_video(link)
+				hash_video = [None if link == None else i for i in [yt.get_hash_video(link)]]
 			),
 			unsafe_allow_html = True
 		)
