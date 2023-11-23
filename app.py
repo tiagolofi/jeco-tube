@@ -86,18 +86,7 @@ with col1:
 		
 with col2:
 	
-	st.subheader('Acesso com Hash')
-
-	hash_ = st.text_input('Hash do Vídeo:')
-
-	with st.expander('Mostrar/Ocultar Vìdeo '):
-
-		st.markdown(
-			yt.embed_link(
-				hash_video = hash_
-			),
-			unsafe_allow_html = True
-		)
+	st.image('https://rotony.com.br/wp-content/uploads/2021/09/free-youtube-logo-icon-2431-thumb.png')
 
 with col3:
 
