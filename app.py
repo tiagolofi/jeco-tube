@@ -138,7 +138,15 @@ if 'ultima_busca' in st.session_state.keys():
 	with c1:
 		
 		for i in resultados[0:lines]:
-			st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+
+			st.markdown(
+				yt.embed_link_minimal(
+					hash_video = i['hash_video']
+				),
+				unsafe_allow_html = True
+			)
+			st.write(i['title'])
+			# st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 	
 	with c2:
 		
