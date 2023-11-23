@@ -13,95 +13,6 @@ st.set_page_config(
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
-def download_va(type_: str) -> tuple:
-
-	buff = BytesIO()
-
-	if type_ == 'video':
-
-		down_ = YouTube(url = link).streams.filter(progressive = True).filter(file_extension='mp4').order_by('resolution').last()
-
-		down_.stream_to_buffer(buff)
-
-		return down_.default_filename, buff.getvalue()
-
-	else:
-
-		down_ = YouTube(url = link).streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last()
-
-		down_.stream_to_buffer(buff)
-
-		return down_.default_filename, buff.getvalue()
-
-col1, col2 = st.columns(2)
-
-with col1:
-
-	st.subheader('Acesso com Link')
-
-	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=oCt_LiCPJfQ&ab_channel=McSuave')
-
-	with st.expander('Mostrar/Ocultar Vídeo'):
-
-		st.markdown(
-			yt.embed_link(
-				hash_video = yt.get_hash_video(link),
-			),
-			unsafe_allow_html = True
-		)
-
-	s1, s2 = st.columns(2)
-
-	with s1:
-
-		down_but_v = st.button('Preparar Download Vídeo')
-
-		if down_but_v:
-
-			try:
-
-				name, data = download_va('video')
-
-				baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
-
-			except:
-
-				st.info('Este vídeo não pode ser baixado!')
-
-	with s2:
-
-		down_but_a = st.button('Preparar Download Áudio')
-
-		if down_but_a:
-
-			try:
-
-				name2, data2 = download_va('audio')
-
-				baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
-
-			except:
-
-				st.info('Este áudio não pode ser baixado!')
-		
-with col2:
-
-	st.subheader('Playlist de Vídeo')
-
-	link_playlist = st.text_input('Source da Playlist', value = "https://www.youtube.com/embed/videoseries?si=3KfAA7PN_faEeDSj&amp;list=PLjEnoakd3pXUeW8FgKdq4RLT4RFLPVoMK")
-
-	with st.expander('Mostrar/Ocultar Playlist'):
-
-		st.markdown(
-			f'''
-			<iframe 
-		 		width="100%" height="300" src="{link_playlist}" 
-		   		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-			 		gyroscope; picture-in-picture; web-share" allowfullscreen>
-			</iframe>
-			''', unsafe_allow_html=True
-		)
-
 st.subheader('Pesquisa de Vídeo')
 
 termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mendes')
@@ -178,3 +89,72 @@ if 'ultima_busca' in st.session_state.keys():
 				unsafe_allow_html = True
 			)
 			st.write(f'''_{i['title']}_''')
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+	st.subheader('Acesso com Link')
+
+	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=oCt_LiCPJfQ&ab_channel=McSuave')
+
+	with st.expander('Mostrar/Ocultar Vídeo'):
+
+		st.markdown(
+			yt.embed_link(
+				hash_video = yt.get_hash_video(link),
+			),
+			unsafe_allow_html = True
+		)
+
+	s1, s2 = st.columns(2)
+
+	with s1:
+
+		down_but_v = st.button('Preparar Download Vídeo')
+
+		if down_but_v:
+
+			try:
+
+				name, data = yt.download_va('video')
+
+				baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
+
+			except:
+
+				st.info('Este vídeo não pode ser baixado!')
+
+	with s2:
+
+		down_but_a = st.button('Preparar Download Áudio')
+
+		if down_but_a:
+
+			try:
+
+				name2, data2 = yt.download_va('audio')
+
+				baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
+
+			except:
+
+				st.info('Este áudio não pode ser baixado!')
+		
+with col2:
+
+	st.subheader('Playlist de Vídeo')
+
+	link_playlist = st.text_input('Source da Playlist', value = "https://www.youtube.com/embed/videoseries?si=3KfAA7PN_faEeDSj&amp;list=PLjEnoakd3pXUeW8FgKdq4RLT4RFLPVoMK")
+
+	with st.expander('Mostrar/Ocultar Playlist'):
+
+		st.markdown(
+			f'''
+			<iframe 
+		 		width="100%" height="300" src="{link_playlist}" 
+		   		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+			 		gyroscope; picture-in-picture; web-share" allowfullscreen>
+			</iframe>
+			''', unsafe_allow_html=True
+		)
