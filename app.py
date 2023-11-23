@@ -90,7 +90,8 @@ with col2:
 		f'''
   		<iframe src="https://poki.com/br/g/snake-is-mlg-edition" width="100%", height="300">
     		</iframe>
-  		'''
+  		''',
+		unsafe_allow_html=True
 	)
 
 with col3:
