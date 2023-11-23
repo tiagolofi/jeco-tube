@@ -1,7 +1,5 @@
 
 import streamlit as st
-from pytube import YouTube
-from io import BytesIO
 import yt
 
 st.set_page_config(
