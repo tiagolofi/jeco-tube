@@ -132,8 +132,6 @@ if 'ultima_busca' in st.session_state.keys():
 	lines = len(resultados) // 5
 	
 	c1, c2, c3, c4, c5 = st.columns(5)
-	
-	WIDTH = 200
 
 	with c1:
 		
@@ -145,25 +143,53 @@ if 'ultima_busca' in st.session_state.keys():
 				),
 				unsafe_allow_html = True
 			)
-			st.write(i['title'])
+			st.write(f'''_{i['title']_}''')
 			# st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 	
 	with c2:
 		
 		for i in resultados[lines + 1:lines * 2]:
-				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+			
+			st.markdown(
+				yt.embed_link_minimal(
+					hash_video = i['hash_video']
+				),
+				unsafe_allow_html = True
+			)
+			st.write(f'''_{i['title']_}''')
 		
 	with c3:
 		
 		for i in resultados[(lines * 2) + 1:lines * 3]:
-				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-		
+			
+			st.markdown(
+				yt.embed_link_minimal(
+					hash_video = i['hash_video']
+				),
+				unsafe_allow_html = True
+			)
+			st.write(f'''_{i['title']_}''')
+			
 	with c4:
 		
 		for i in resultados[(lines * 3) + 1:lines * 4]:
-				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+			
+			st.markdown(
+				yt.embed_link_minimal(
+					hash_video = i['hash_video']
+				),
+				unsafe_allow_html = True
+			)
+			st.write(f'''_{i['title']_}''')
 		
 	with c5:
 		
 		for i in resultados[(lines * 4) + 1:len(resultados)]:
-				st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH) 
+			
+			st.markdown(
+				yt.embed_link_minimal(
+					hash_video = i['hash_video']
+				),
+				unsafe_allow_html = True
+			)
+			st.write(f'''_{i['title']_}''')
