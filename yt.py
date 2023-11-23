@@ -3,6 +3,9 @@ import requests
 import re
 import json
 
+from pytube import YouTube
+from io import BytesIO
+
 def get_hash_video(url: str) -> str:
 
     if '&' in url:
@@ -54,3 +57,23 @@ def get_data_query(search_term: str) -> list:
         )
 
     return list_struc
+
+def download_va(type_: str) -> tuple:
+
+	buff = BytesIO()
+
+	if type_ == 'video':
+
+		down_ = YouTube(url = link).streams.filter(progressive = True).filter(file_extension='mp4').order_by('resolution').last()
+
+		down_.stream_to_buffer(buff)
+
+		return down_.default_filename, buff.getvalue()
+
+	else:
+
+		down_ = YouTube(url = link).streams.filter(only_audio = True).filter(file_extension='mp4').order_by('abr').last()
+
+		down_.stream_to_buffer(buff)
+
+		return down_.default_filename, buff.getvalue()
