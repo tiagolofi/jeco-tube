@@ -143,7 +143,7 @@ if 'ultima_busca' in st.session_state.keys():
 				),
 				unsafe_allow_html = True
 			)
-			st.write(f'''_{i['title']_}''')
+			st.write(f'''_{i['title']}_''')
 			# st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
 	
 	with c2:
@@ -156,7 +156,7 @@ if 'ultima_busca' in st.session_state.keys():
 				),
 				unsafe_allow_html = True
 			)
-			st.write(f'''_{i['title']_}''')
+			st.write(f'''_{i['title']}_''')
 		
 	with c3:
 		
@@ -168,7 +168,7 @@ if 'ultima_busca' in st.session_state.keys():
 				),
 				unsafe_allow_html = True
 			)
-			st.write(f'''_{i['title']_}''')
+			st.write(f'''_{i['title']}_''')
 			
 	with c4:
 		
@@ -180,7 +180,7 @@ if 'ultima_busca' in st.session_state.keys():
 				),
 				unsafe_allow_html = True
 			)
-			st.write(f'''_{i['title']_}''')
+			st.write(f'''_{i['title']}_''')
 		
 	with c5:
 		
@@ -192,4 +192,4 @@ if 'ultima_busca' in st.session_state.keys():
 				),
 				unsafe_allow_html = True
 			)
-			st.write(f'''_{i['title']_}''')
+			st.write(f'''_{i['title']}_''')
