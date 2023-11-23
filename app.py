@@ -86,7 +86,12 @@ with col1:
 		
 with col2:
 	
-	st.image('https://rotony.com.br/wp-content/uploads/2021/09/free-youtube-logo-icon-2431-thumb.png')
+	st.markdown(
+		f'''
+  		<iframe src="https://poki.com/br/g/snake-is-mlg-edition" width="100%", height="300">
+    		</iframe>
+  		'''
+	)
 
 with col3:
 
