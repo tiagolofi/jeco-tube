@@ -33,7 +33,7 @@ def download_va(type_: str) -> tuple:
 
 		return down_.default_filename, buff.getvalue()
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
 
@@ -85,16 +85,6 @@ with col1:
 				st.info('Este áudio não pode ser baixado!')
 		
 with col2:
-	
-	st.markdown(
-		f'''
-  		<iframe src="https://poki.com/br/g/snake-is-mlg-edition" width="100%", height="300">
-    		</iframe>
-  		''',
-		unsafe_allow_html=True
-	)
-
-with col3:
 
 	st.subheader('Playlist de Vídeo')
 
