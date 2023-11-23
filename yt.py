@@ -19,6 +19,15 @@ def embed_link(hash_video: str) -> str:
     ></iframe>
     '''
 
+def embed_link_minimal(hash_video: str) -> str:
+
+    return f'''
+    <iframe
+        width="100%" height="100" src="https://www.youtube-nocookie.com/embed/{hash_video}"
+	frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> 
+    ></iframe>
+    '''
+
 def get_data_query(search_term: str) -> list:
 
     url_query = f'''https://www.youtube.com/results?search_query={search_term}'''
