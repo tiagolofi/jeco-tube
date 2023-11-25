@@ -78,7 +78,7 @@ if 'ultima_busca' in st.session_state.keys():
 		
 	with c5:
 		
-		for i in resultados[(lines * 4) + 1:20]:
+		for i in resultados[(lines * 4) + 1:15]:
 			
 			st.markdown(
 				yt.embed_link_minimal(
