@@ -115,7 +115,7 @@ with col1:
 
 			try:
 
-				name, data = yt.download_va('video')
+				name, data = yt.download_va(link, 'video')
 
 				baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
 
@@ -131,7 +131,7 @@ with col1:
 
 			try:
 
-				name2, data2 = yt.download_va('audio')
+				name2, data2 = yt.download_va(link, 'audio')
 
 				baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
 
