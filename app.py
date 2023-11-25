@@ -23,7 +23,7 @@ if 'ultima_busca' in st.session_state.keys():
 
 	resultados = yt.get_data_query(search_term = st.session_state['ultima_busca'])
 	
-	lines = len(resultados) // 5
+	lines = 20 // 5
 	
 	c1, c2, c3, c4, c5 = st.columns(5)
 
@@ -78,7 +78,7 @@ if 'ultima_busca' in st.session_state.keys():
 		
 	with c5:
 		
-		for i in resultados[(lines * 4) + 1:len(resultados)]:
+		for i in resultados[(lines * 4) + 1:20]:
 			
 			st.markdown(
 				yt.embed_link_minimal(
