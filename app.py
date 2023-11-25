@@ -156,15 +156,3 @@ with col2:
 			</iframe>
 			''', unsafe_allow_html=True
 		)
-
-with st.container():
-
-	st.markdown(
-		'''
-		.div {
-			box-shadow: 1px;
-			border-radius: 10px	
-		}
-		''',
-		unsafe_allow_html = True
-	)
