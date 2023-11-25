@@ -113,15 +113,15 @@ with col1:
 
 		if down_but_v:
 
-			# try:
+			try:
 
-			name, data = yt.download_va('video')
+				name, data = yt.download_va('video')
 
-			baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
+				baixar_video = st.download_button('Baixar Vídeo', data = data, file_name = name)
 
-			# except:
+			except:
 
-			st.info('Este vídeo não pode ser baixado!')
+				st.info('Este vídeo não pode ser baixado!')
 
 	with s2:
 
@@ -129,15 +129,15 @@ with col1:
 
 		if down_but_a:
 
-			# try:
+			try:
 
-			name2, data2 = yt.download_va('audio')
+				name2, data2 = yt.download_va('audio')
 
-			baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
+				baixar_musica = st.download_button('Baixar Áudio', data = data2, file_name = name2)
 
-			# except:
+			except:
 
-			st.info('Este áudio não pode ser baixado!')
+				st.info('Este áudio não pode ser baixado!')
 		
 with col2:
 
