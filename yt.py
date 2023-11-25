@@ -58,7 +58,7 @@ def get_data_query(search_term: str) -> list:
 
     return list_struc
 
-def download_va(type_: str) -> tuple:
+def download_va(link: str, type_: str) -> tuple:
 
 	buff = BytesIO()
 
