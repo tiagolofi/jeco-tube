@@ -98,12 +98,14 @@ with col1:
 
 	with st.expander('Mostrar/Ocultar Vídeo'):
 
-		st.markdown(
-			yt.embed_link(
-				hash_video = yt.get_hash_video(link),
-			),
-			unsafe_allow_html = True
-		)
+		if link not is None:
+		
+			st.markdown(
+				yt.embed_link(
+					hash_video = yt.get_hash_video(link),
+				),
+				unsafe_allow_html = True
+			)
 
 	s1, s2 = st.columns(2)
 
