@@ -11,12 +11,11 @@ st.set_page_config(
 
 css = '''
 <style>
-    [data-testid="ScrollToBottomContainer"] {
-        overflow: hidden;
-    }
+section.main > div:has(~ footer ) {
+    padding-bottom: 5px;
+}
 </style>
 '''
-
 st.markdown(css, unsafe_allow_html=True)
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
