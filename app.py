@@ -20,7 +20,7 @@ st.markdown(css, unsafe_allow_html=True)
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([2, 1])
 
 with col1:
 
