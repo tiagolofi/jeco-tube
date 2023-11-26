@@ -50,7 +50,7 @@ with col1:
 
 		with c1:
 
-			for i in resultados[::lines]:
+			for i in resultados[0:lines]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -63,7 +63,7 @@ with col1:
 
 		with c2:
 
-			for i in resultados[1::lines]:
+			for i in resultados[lines:(lines * 2)]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -75,7 +75,7 @@ with col1:
 
 		with c3:
 
-			for i in resultados[2::lines]:
+			for i in resultados[(lines * 2):(lines * 3)]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -87,7 +87,7 @@ with col1:
 
 		with c4:
 
-			for i in resultados[3::lines]:
+			for i in resultados[(lines * 3):(lines * 4)]:
 
 				st.markdown(
 					yt.embed_link_minimal(
