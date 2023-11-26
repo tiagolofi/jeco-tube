@@ -12,7 +12,7 @@ st.set_page_config(
 css = '''
 <style>
 section.main > div:has(~ footer ) {
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 </style>
 '''
