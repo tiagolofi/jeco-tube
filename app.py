@@ -46,56 +46,58 @@ with col1:
 
 		lines = n_videos // 4
 
-		c1, c2, c3, c4 = st.columns(4)
-
-		with c1:
-
-			for i in resultados[0:lines]:
-
-				st.markdown(
-					yt.embed_link_minimal(
-						hash_video = i['hash_video']
-					),
-					unsafe_allow_html = True
-				)
-				st.write(f'''_{i['title']}_''')
-				# st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
-
-		with c2:
-
-			for i in resultados[lines:(lines * 2)]:
-
-				st.markdown(
-					yt.embed_link_minimal(
-						hash_video = i['hash_video']
-					),
-					unsafe_allow_html = True
-				)
-				st.write(f'''_{i['title']}_''')
-
-		with c3:
-
-			for i in resultados[(lines * 2):(lines * 3)]:
-
-				st.markdown(
-					yt.embed_link_minimal(
-						hash_video = i['hash_video']
-					),
-					unsafe_allow_html = True
-				)
-				st.write(f'''_{i['title']}_''')
-
-		with c4:
-
-			for i in resultados[(lines * 3):(lines * 4)]:
-
-				st.markdown(
-					yt.embed_link_minimal(
-						hash_video = i['hash_video']
-					),
-					unsafe_allow_html = True
-				)
-				st.write(f'''_{i['title']}_''')
+		with st.expander(f'Vídeos encontrados: {len(resultados)}'):
+		
+			c1, c2, c3, c4 = st.columns(4)
+	
+			with c1:
+	
+				for i in resultados[0:lines]:
+	
+					st.markdown(
+						yt.embed_link_minimal(
+							hash_video = i['hash_video']
+						),
+						unsafe_allow_html = True
+					)
+					st.write(f'''_{i['title']}_''')
+					# st.image(i['thumb'], caption = i['title'] + ' - ' + i['hash_video'], width = WIDTH)
+	
+			with c2:
+	
+				for i in resultados[lines:(lines * 2)]:
+	
+					st.markdown(
+						yt.embed_link_minimal(
+							hash_video = i['hash_video']
+						),
+						unsafe_allow_html = True
+					)
+					st.write(f'''_{i['title']}_''')
+	
+			with c3:
+	
+				for i in resultados[(lines * 2):(lines * 3)]:
+	
+					st.markdown(
+						yt.embed_link_minimal(
+							hash_video = i['hash_video']
+						),
+						unsafe_allow_html = True
+					)
+					st.write(f'''_{i['title']}_''')
+	
+			with c4:
+	
+				for i in resultados[(lines * 3):(lines * 4)]:
+	
+					st.markdown(
+						yt.embed_link_minimal(
+							hash_video = i['hash_video']
+						),
+						unsafe_allow_html = True
+					)
+					st.write(f'''_{i['title']}_''')
 
 with col2:
 
