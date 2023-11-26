@@ -97,15 +97,16 @@ with col1:
 	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=oCt_LiCPJfQ&ab_channel=McSuave')
 
 	with st.expander('Mostrar/Ocultar Vídeo'):
-		
-		if link not is None:
-		
+
+		try: 
 			st.markdown(
 				yt.embed_link(
 					hash_video = yt.get_hash_video(link),
 				),
 				unsafe_allow_html = True
 			)
+		except:
+			pass
 
 	s1, s2 = st.columns(2)
 
