@@ -97,7 +97,7 @@ with col1:
 	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=oCt_LiCPJfQ&ab_channel=McSuave')
 
 	with st.expander('Mostrar/Ocultar Vídeo'):
-
+		
 		if link not is None:
 		
 			st.markdown(
