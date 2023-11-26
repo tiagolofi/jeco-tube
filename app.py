@@ -98,7 +98,7 @@ with col1:
 
 	with st.expander('Mostrar/Ocultar Vídeo'):
 		
-		if link != None:
+		if link not is None:
 		
 			st.markdown(
 				yt.embed_link(
