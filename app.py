@@ -44,7 +44,7 @@ with col1:
 
 		resultados = yt.get_data_query(search_term = st.session_state['ultima_busca'])
 
-		lines = n_videos / 4
+		lines = n_videos // 4
 
 		c1, c2, c3, c4 = st.columns(4)
 
