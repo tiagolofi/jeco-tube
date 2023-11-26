@@ -75,7 +75,7 @@ with col1:
 
 		with c3:
 
-			for i in resultados[(lines * 2) + 1:lines * 3]:
+			for i in resultados[(lines * 2) + 1:(lines * 3)+1]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -87,7 +87,7 @@ with col1:
 
 		with c4:
 
-			for i in resultados[(lines * 3) + 1:lines * 4]:
+			for i in resultados[(lines * 3) + 1:(lines * 4)+1]:
 
 				st.markdown(
 					yt.embed_link_minimal(
