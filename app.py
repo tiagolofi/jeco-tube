@@ -11,6 +11,15 @@ st.set_page_config(
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
+css = '''
+<style>
+section.main > div:has(~ footer ) {
+    padding-bottom: 0px;
+}
+</style>
+'''
+st.markdown(css, unsafe_allow_html=True)
+
 col1, col2 = st.columns([2, 1])
 
 with col1:
