@@ -35,7 +35,7 @@ with col1:
 
 	with x2:
 
-		n_videos = st.number_input('Número de Vídeos (máx: 40)', value = 10, max_value = 40, min_value = 2, step = 2)
+		n_videos = st.number_input('Número de Vídeos (máx: 40)', value = 10, max_value = 40, min_value = 4, step = 4)
 	
 	if botao:
 		st.session_state['ultima_busca'] = termo
