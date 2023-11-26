@@ -9,15 +9,6 @@ st.set_page_config(
 	initial_sidebar_state = 'collapsed' 
 )
 
-css = '''
-<style>
-section.main > div:has(~ footer ) {
-    padding-bottom: 0px;
-}
-</style>
-'''
-st.markdown(css, unsafe_allow_html=True)
-
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
 col1, col2 = st.columns([2, 1])
