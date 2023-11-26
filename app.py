@@ -11,17 +11,17 @@ st.set_page_config(
 
 st.header('JecoTube - o seu YouTube sem anúncios', divider = 'red')
 
-st.subheader('Pesquisa de Vídeo')
-
-termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mendes')
-botao = st.button('Pesquisar')
-
-if botao:
-	st.session_state['ultima_busca'] = termo
-
 col1, col2 = st.columns(2)
 
 with col1:
+
+	st.subheader('Pesquisa de Vídeo')
+
+	termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mendes')
+	botao = st.button('Pesquisar')
+	
+	if botao:
+		st.session_state['ultima_busca'] = termo
 
 	if 'ultima_busca' in st.session_state.keys():
 
