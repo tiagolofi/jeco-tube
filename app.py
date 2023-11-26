@@ -63,7 +63,7 @@ with col1:
 
 		with c2:
 
-			for i in resultados[lines + 1:lines * 2]:
+			for i in resultados[lines + 1:(lines * 2)+1]:
 
 				st.markdown(
 					yt.embed_link_minimal(
