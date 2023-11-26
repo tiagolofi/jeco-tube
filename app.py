@@ -35,7 +35,7 @@ with col1:
 
 	with x2:
 
-		n_videos = st.number_input('Número de Vídeos (máx: 40)', value = 10, max_value = 40, min_value = 1, step = 1)
+		n_videos = st.number_input('Número de Vídeos (máx: 40)', value = 10, max_value = 40, min_value = 2, step = 2)
 	
 	if botao:
 		st.session_state['ultima_busca'] = termo
@@ -44,13 +44,13 @@ with col1:
 
 		resultados = yt.get_data_query(search_term = st.session_state['ultima_busca'])
 
-		lines = n_videos // 5
+		lines = n_videos / 4
 
-		c1, c2, c3, c4, c5 = st.columns(5)
+		c1, c2, c3, c4 = st.columns(4)
 
 		with c1:
 
-			for i in resultados[0:lines]:
+			for i in resultados[::lines]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -63,7 +63,7 @@ with col1:
 
 		with c2:
 
-			for i in resultados[lines + 1:(lines * 2)+1]:
+			for i in resultados[1::lines]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -75,7 +75,7 @@ with col1:
 
 		with c3:
 
-			for i in resultados[(lines * 2) + 1:(lines * 3)+1]:
+			for i in resultados[2::lines]:
 
 				st.markdown(
 					yt.embed_link_minimal(
@@ -87,19 +87,7 @@ with col1:
 
 		with c4:
 
-			for i in resultados[(lines * 3) + 1:(lines * 4)+1]:
-
-				st.markdown(
-					yt.embed_link_minimal(
-						hash_video = i['hash_video']
-					),
-					unsafe_allow_html = True
-				)
-				st.write(f'''_{i['title']}_''')
-
-		with c5:
-
-			for i in resultados[(lines * 4) + 1:n_videos]:
+			for i in resultados[3::lines]:
 
 				st.markdown(
 					yt.embed_link_minimal(
