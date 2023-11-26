@@ -26,8 +26,16 @@ with col1:
 
 	st.subheader('Pesquisa de Vídeo')
 
-	termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mendes')
-	botao = st.button('Pesquisar')
+	x1, x2 = st.columns(2)
+	
+	with x1:
+	
+		termo = st.text_input('Termo de Pesquisa:', value = 'Live de Python Eduardo Mendes')
+		botao = st.button('Pesquisar')
+
+	with x2:
+
+		n_videos = st.number_input('Número de Vídeos (máx: 40)', value = 10, max = 40, min = 1, step = 1)
 	
 	if botao:
 		st.session_state['ultima_busca'] = termo
@@ -36,7 +44,7 @@ with col1:
 
 		resultados = yt.get_data_query(search_term = st.session_state['ultima_busca'])
 
-		lines = 15 // 5
+		lines = n_videos // 5
 
 		c1, c2, c3, c4, c5 = st.columns(5)
 
@@ -91,7 +99,7 @@ with col1:
 
 		with c5:
 
-			for i in resultados[(lines * 4) + 1:15]:
+			for i in resultados[(lines * 4) + 1:n_videos]:
 
 				st.markdown(
 					yt.embed_link_minimal(
