@@ -103,7 +103,7 @@ with col2:
 
 	st.subheader('Acesso com Link')
 
-	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=vJ6zTsTv66o&ab_channel=AtilaKw')
+	link = st.text_input('URL do Vídeo:', value = 'https://www.youtube.com/watch?v=gi7RUNTNWXw&ab_channel=NeuralPlay')
 
 	with st.expander('Mostrar/Ocultar Vídeo'):
 
